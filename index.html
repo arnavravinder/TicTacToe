@@ -5,24 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tic-Tac-Toe</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
   <div class="container">
-    <h1>Tic-Tac-Toe</h1>
-    <div class="board" id="board">
-      <div class="cell" data-index="0"></div>
-      <div class="cell" data-index="1"></div>
-      <div class="cell" data-index="2"></div>
-      <div class="cell" data-index="3"></div>
-      <div class="cell" data-index="4"></div>
-      <div class="cell" data-index="5"></div>
-      <div class="cell" data-index="6"></div>
-      <div class="cell" data-index="7"></div>
-      <div class="cell" data-index="8"></div>
+    <h1 data-aos="fade-down">Tic-Tac-Toe</h1>
+    <div class="board" id="board" data-tilt data-tilt-max="10" data-tilt-speed="400">
+      <div class="cell" data-index="0" data-aos="fade-up" data-aos-delay="100"></div>
+      <div class="cell" data-index="1" data-aos="fade-up" data-aos-delay="200"></div>
+      <div class="cell" data-index="2" data-aos="fade-up" data-aos-delay="300"></div>
+      <div class="cell" data-index="3" data-aos="fade-up" data-aos-delay="400"></div>
+      <div class="cell" data-index="4" data-aos="fade-up" data-aos-delay="500"></div>
+      <div class="cell" data-index="5" data-aos="fade-up" data-aos-delay="600"></div>
+      <div class="cell" data-aos="fade-up" data-index="6" data-aos-delay="700"></div>
+      <div class="cell" data-aos="fade-up" data-index="7" data-aos-delay="800"></div>
+      <div class="cell" data-aos="fade-up" data-index="8" data-aos-delay="900"></div>
     </div>
-    <button id="restartBtn">Restart Game</button>
-    <p id="message"></p>
+    <button id="restartBtn" data-aos="zoom-in">Restart Game</button>
+    <p id="message" data-aos="zoom-in"></p>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="script.js"></script>
+  <script>
+    AOS.init();
+    VanillaTilt.init(document.querySelector(".board"), {
+      max: 25,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.5,
+    });
+  </script>
 </body>
 </html>
